@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Agent 体验馆</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" data-route="home" aria-label="返回首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" role="presentation">
+            <defs><linearGradient id="da-gradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#1769ff"/><stop offset="1" stop-color="#7b5cff"/></linearGradient></defs>
+            <rect width="40" height="40" rx="12" fill="url(#da-gradient)"/>
+            <path d="M10 28V20M16 28V14M22 28V18M28 28V10" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="10" cy="17" r="2" fill="#74f1e8"/><circle cx="28" cy="8" r="2" fill="#74f1e8"/>
+          </svg>
+        </span>
+        <span class="brand-name"><strong>Data</strong> Agent</span>
+      </a>
+      <nav class="nav">
+        <a href="#">首页</a>
+        <button type="button">智能体</button>
+        <button type="button">数据Skills</button>
+        <button type="button">语义中心</button>
+        <button class="is-active" type="button" data-route="home">体验馆</button>
+      </nav>
+    </header>
+
+    <main id="app">
+      <section class="gallery-view" data-view="home">
+        <div class="hero">
+          <h1>Data Agent <span>数据的事，你来说，我来做</span></h1>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="halo"></div>
+            <img src="assets/data-assistant-transparent.png" alt="" />
+          </div>
+        </div>
+
+        <div class="case-showcase" aria-label="体验案例">
+          <button class="case-card primary-case" type="button" data-case="daily-traffic">
+            <span class="tags">
+              <span>智能问数</span>
+              <span>趋势可视化</span>
+              <span>数据解读</span>
+            </span>
+            <strong>每日访问量查询</strong>
+            <p>查询 2026 年 4 月每天有多少访问用户，并用折线图展示趋势。</p>
+          </button>
+          <button class="case-card muted-case" type="button" data-case="order-amount">
+            <span class="tags">
+              <span>智能问数</span>
+              <span>数据透视</span>
+              <span>品类拆分</span>
+            </span>
+            <strong>订单金额透视分析</strong>
+            <p>查询 2026 年 4 月总订单金额，并用数据透视表按商品品类快速拆分。</p>
+          </button>
+          <button class="case-card primary-case" type="button" data-case="sales-report">
+            <span class="tags">
+              <span>深度洞察</span>
+              <span>智能报告</span>
+              <span>经营建议</span>
+            </span>
+            <strong>商品销售经营报告</strong>
+            <p>基于当前销售数据生成 HTML 经营报告，并给出重点发现和经营建议。</p>
+          </button>
+          <button class="case-card primary-case" type="button" data-case="funnel-analysis">
+            <span class="tags">
+              <span>深度洞察</span>
+              <span>Skill 技能</span>
+              <span>转化漏斗</span>
+            </span>
+            <strong>电商转化漏斗分析</strong>
+            <p>调用专业分析技能，分析访问、加购、下单、支付各环节数据与转化率。</p>
+          </button>
+        </div>
+      </section>
+
+      <section class="agent-view" data-view="agent" hidden>
+        <aside class="sidebar">
+          <div class="agent-brand">
+            <span class="agent-logo">DA</span>
+            <span>Data Agent</span>
+          </div>
+          <div class="side-label">智能体</div>
+          <div class="bot-switch">
+            <strong>Data Agent</strong>
+          </div>
+          <button class="new-chat" type="button">开启新对话</button>
+          <div class="chat-history">
+            <span>今天</span>
+            <button class="history-item is-active" type="button">2026年4月每天有多少访问用...</button>
+            <span>近30天</span>
+          </div>
+          <div class="side-footer">
+            <span>轻</span>
+            <span>⚙</span>
+          </div>
+        </aside>
+
+        <div class="agent-main">
+          <div class="conversation">
+            <button class="back-btn" type="button" data-route="home" aria-label="返回体验馆">
+              <span aria-hidden="true">‹</span>
+            </button>
+            <div class="user-bubble">2026年4月每天有多少访问用户？用折线图表现趋势</div>
+
+            <div class="assistant-status">
+              <img src="assets/data-assistant-transparent.png" alt="" />
+              <span class="dots"><i></i><i></i><i></i></span>
+            </div>
+
+            <section class="result-area" hidden>
+              <div class="agent-complete">
+                <img src="assets/data-assistant-transparent.png" alt="" />
+                <span>深度探索完成</span>
+                <small>28s</small>
+                <button type="button">☰ 查看明细</button>
+              </div>
+
+              <article class="chart-card">
+                <div class="chart-top">
+                  <div>
+                    <h2>2026年4月日活趋势</h2>
+                    <div class="date-chip"><span>日期</span><strong>2026-04-01 ≤ 且 &lt; 2026-05-01</strong></div>
+                  </div>
+                  <div class="chart-tools">
+                    <button class="pivot-mode-btn" type="button">数据透视</button>
+                    <button class="interpret-btn" type="button">数据解读</button>
+                    <button type="button">归因分析</button>
+                    <span class="interpret-guide" hidden>点击查看数据解读</span>
+                  </div>
+                </div>
+                <div class="legend"><span></span>活跃用户数</div>
+                <div class="chart-wrap">
+                  <canvas id="trafficChart" width="960" height="360" aria-label="2026年4月每日活跃用户折线图"></canvas>
+                </div>
+                <section class="insight-panel" hidden>
+                  <div class="insight-head">数据解读</div>
+                  <h3>图表核心指标</h3>
+                  <p>本图展示 2026 年 4 月 1 日至 4 月 30 日每日活跃用户数变化，共 30 条记录。4 月日均活跃用户数约为 1,498 人，整体在 982 至 2,016 人之间波动。</p>
+                  <h3>关键趋势/异常</h3>
+                  <p>月内最高点出现在 4 月 19 日，活跃用户数达到 2,016 人；最低点出现在 4 月 28 日，仅 982 人。4 月 12 日、13 日、23 日和 28 日均低于 1,250 人，属于明显低位区间；而 4 月 14 日、19 日、22 日和 29 日均超过 1,750 人，说明短期内存在较强峰谷切换。</p>
+                  <h3>数据洞察</h3>
+                  <p>该数据集反映出用户活跃度存在较明显的不稳定性，暂未形成持续增长的线性趋势或稳定的基准水平。需重点关注数值在短时间内大幅回落的具体触发因素，尤其是 4 月 19 日高峰后与 4 月 28 日低谷前后的访问结构变化，以便后续分析中识别潜在的用户留存瓶颈。</p>
+                </section>
+                <section class="order-panel" hidden>
+                  <div class="order-total">
+                    <span>订单金额合计</span>
+                    <strong>6,920,778.85</strong>
+                  </div>
+                  <div class="category-amounts" hidden>
+                    <div class="amount-card blue"><span>3C数码</span><strong>1,284,691.75</strong></div>
+                    <div class="amount-card orange"><span>家居日用</span><strong>1,175,689.28</strong></div>
+                    <div class="amount-card green"><span>服饰鞋包</span><strong>917,172.22</strong></div>
+                    <div class="amount-card purple"><span>美妆护肤</span><strong>1,135,942.15</strong></div>
+                    <div class="amount-card red"><span>运动户外</span><strong>1,188,188.69</strong></div>
+                    <div class="amount-card cyan"><span>食品生鲜</span><strong>1,219,094.76</strong></div>
+                  </div>
+                </section>
+                <section class="report-panel" hidden>
+                  <p class="report-reply">下面是完整的 HTML 经营报告内容。</p>
+                  <iframe
+                    title="商品销售经营报告"
+                    data-src="assets/sales-report.html"
+                  ></iframe>
+                  <section class="report-summary" aria-label="任务执行总结">
+                    <h3>✅ 任务执行总结</h3>
+                    <h4>任务概述</h4>
+                    <p>
+                      基于 <code>demo_goods_order_summary</code>（4 万条明细，2020-01 ~ 2020-08）生成商品销售 HTML 经营报告。
+                    </p>
+                    <h4>执行过程</h4>
+                    <ol>
+                      <li><strong>数据探查</strong> — 表共 13 个字段，覆盖时间、地区、门店、商品、品类、销量、销售额、成本额。</li>
+                      <li><strong>核心指标</strong> — 总销售 8135.2 万、总毛利 4880.5 万、毛利率 59.99%、订单 1.57 万单、客单价 5179 元、覆盖 309 店 / 32 省 / 296 城。</li>
+                      <li><strong>多维分析</strong> — 完成月度趋势、品类结构、Top10 商品、Top15 省份、品类×月份热力图。</li>
+                      <li><strong>报告产出</strong> — 输出含 8 张 KPI 卡 + 6 张 Plotly 交互图 + 8 条重点发现 + 8 条经营建议的自包含 HTML。</li>
+                    </ol>
+                    <h4>最终结论（亮点）</h4>
+                    <ul>
+                      <li><strong>零食 + 生鲜</strong> = 利润双引擎，但生鲜毛利率最高（70.4%）有继续放大的空间。</li>
+                      <li><strong>8 月销售跳涨 +85.8%</strong>，建议立刻复盘根因；<strong>2 月跌至月均 1/3</strong> 的淡季风险需提前预案。</li>
+                      <li><strong>饮料</strong>是毛利率洼地（44.3%），结构亟需优化；<strong>微爽日用</strong> 单品毛利率仅 39.7%，需重新议价。</li>
+                      <li><strong>区域不均衡</strong>：广东 / 浙江 / 福建 / 湖南占近 50%，江苏、河南等存在「店多产出低」的诊断需求。</li>
+                    </ul>
+                    <h4>后续建议</h4>
+                    <p>
+                      若需要做 PNG 静态版（用于汇报 PPT）、或追加同比/环比对比、商品 ABC 分类、门店效益分析，可继续告诉我。
+                    </p>
+                  </section>
+                </section>
+                <section class="funnel-panel" hidden>
+                  <h3>📊 任务概述</h3>
+                  <p>
+                    基于表 <code>pre_excel_202606056a2291b7e4b076f449b139e4</code>（电商用户行为单表），运用
+                    <strong>funnel-analysis</strong> 方法论，分析用户从 <strong>访问 → 加购 → 下单（结账） → 支付</strong> 的四步线性转化漏斗。
+                  </p>
+                  <p>
+                    数据样本：<strong>1,981 位独立用户</strong>，时间跨度约 2017 年全年，每位用户具备
+                    <code>has_visit</code> / <code>has_cart</code> / <code>has_checkout</code> / <code>has_purchase</code> 标志位与各步骤时间戳。
+                  </p>
+
+                  <h3>🎯 漏斗各环节数据与转化率</h3>
+                  <h4>一、绝对人数与流失量</h4>
+                  <table>
+                    <thead>
+                      <tr><th>步骤</th><th>业务事件</th><th>用户数</th><th>流失人数（vs 上一步）</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Step 1</td><td>访问（Visit）</td><td>1,981</td><td>—</td></tr>
+                      <tr><td>Step 2</td><td>加购（Add to Cart）</td><td>329</td><td>-1,652</td></tr>
+                      <tr><td>Step 3</td><td>下单/结账（Checkout）</td><td>207</td><td>-122</td></tr>
+                      <tr><td>Step 4</td><td>支付（Purchase）</td><td>126</td><td>-81</td></tr>
+                    </tbody>
+                  </table>
+
+                  <h4>二、转化率指标</h4>
+                  <table>
+                    <thead>
+                      <tr><th>转化路径</th><th>单步转化率</th><th>累计转化率（vs 访问）</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>访问 → 加购</td><td>16.61%</td><td>16.61%</td></tr>
+                      <tr><td>加购 → 下单</td><td>62.92%</td><td>10.45%</td></tr>
+                      <tr><td>下单 → 支付</td><td>60.87%</td><td>6.36%</td></tr>
+                      <tr><td>访问 → 支付（整体）</td><td>—</td><td>6.36%</td></tr>
+                    </tbody>
+                  </table>
+
+                  <h4>三、各步骤平均转化耗时（仅最终成功支付用户）</h4>
+                  <table>
+                    <thead>
+                      <tr><th>阶段</th><th>平均耗时</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>访问 → 加购</td><td>13.86 分钟</td></tr>
+                      <tr><td>加购 → 下单</td><td>14.04 分钟</td></tr>
+                      <tr><td>下单 → 支付</td><td>12.82 分钟</td></tr>
+                      <tr><td>访问 → 支付（端到端）</td><td>40.71 分钟</td></tr>
+                    </tbody>
+                  </table>
+                  <p class="funnel-note">成功转化用户的全流程在约 40 分钟内完成，属于“快决策”型电商场景，建议设置转化窗口 ≈ 1 小时。</p>
+
+                  <h3>🔍 漏斗可视化</h3>
+                  <div class="funnel-viz" aria-label="访问到支付转化漏斗">
+                    <div class="funnel-step"><span>访问</span><strong style="--w: 100%">1,981 (100%)</strong></div>
+                    <div class="funnel-rate">↓ 16.61%（流失 1,652 人，最大流失）</div>
+                    <div class="funnel-step"><span>加购</span><strong style="--w: 16.61%">329 (16.61%)</strong></div>
+                    <div class="funnel-rate">↓ 62.92%（流失 122 人）</div>
+                    <div class="funnel-step"><span>下单</span><strong style="--w: 10.45%">207 (10.45%)</strong></div>
+                    <div class="funnel-rate">↓ 60.87%（流失 81 人）</div>
+                    <div class="funnel-step"><span>支付</span><strong style="--w: 6.36%">126 (6.36%)</strong></div>
+                  </div>
+
+                  <h3>💡 关键洞察与诊断</h3>
+                  <h4>1. 最大流失点：访问 → 加购</h4>
+                  <p>流失 1,652 人，占总访问的 83.39%，是绝对损失最高、单步转化率最低的环节，优化优先级最高。</p>
+                  <h4>2. 加购 → 下单 / 下单 → 支付相对健康</h4>
+                  <p>后两步转化均超过 60%，但仍建议关注运费、优惠券、库存提示、支付方式、风控拦截和表单复杂度。</p>
+                  <h4>3. 转化耗时节奏均衡</h4>
+                  <p>三个阶段平均耗时接近 12-14 分钟，未出现某一阶段明显拖长的卡顿。</p>
+
+                  <h3>📈 优化优先级排序</h3>
+                  <table>
+                    <thead>
+                      <tr><th>优先级</th><th>优化环节</th><th>流失人数</th><th>杠杆潜力</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>P0</td><td>访问 → 加购</td><td>1,652</td><td>提升 1 个百分点，可多带来约 20 个加购、最终多约 8 笔订单。</td></tr>
+                      <tr><td>P1</td><td>下单 → 支付</td><td>81</td><td>已接近临门一脚，优化支付/风控可快速变现。</td></tr>
+                      <tr><td>P2</td><td>加购 → 下单</td><td>122</td><td>优化运费、优惠券呈现与库存提示。</td></tr>
+                    </tbody>
+                  </table>
+
+                  <h3>🛠 后续建议</h3>
+                  <ul>
+                    <li>按访问月份/季节、首次 vs 复购、设备等维度拆分，避免聚合数据掩盖差异。</li>
+                    <li>用 P50/P75/P90/P95 转化耗时验证 1 小时窗口是否合理。</li>
+                    <li>审计聚合宽表中的标志位与时间戳一致性。</li>
+                    <li>将“访问 → 加购”流失转化为商详页改版、落地页素材实验等可验证假设。</li>
+                  </ul>
+                  <p class="funnel-conclusion">
+                    结论：整体访问 → 支付转化率为 <strong>6.36%</strong>，瓶颈集中在 <strong>访问到加购</strong> 环节；后续两步转化均超 60%，相对健康。
+                  </p>
+                </section>
+              </article>
+
+            </section>
+          </div>
+
+          <div class="composer">
+            <div class="selected-table">已选数据 <strong>用户行为日志</strong></div>
+            <div class="input-placeholder">Enter发送, Shift + Enter换行</div>
+            <div class="composer-actions">
+              <button type="button">智能问数</button>
+              <button type="button" aria-label="发送">↑</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="process-panel">
+          <div class="process-view">
+            <div class="process-head">
+              <h2>执行过程</h2>
+              <button type="button" data-route="home" aria-label="关闭">×</button>
+            </div>
+            <ol class="process-list" id="processList"></ol>
+          </div>
+          <div class="pivot-view" hidden>
+            <div class="pivot-toolbar">
+              <strong>数据透视表</strong>
+              <button class="pivot-query" type="button" disabled>查询</button>
+            </div>
+            <div class="field-search">
+              <strong>字段列表</strong>
+              <label><input type="search" placeholder="搜索" aria-label="搜索字段" /></label>
+            </div>
+            <ul class="field-list">
+              <li><span class="field-icon date">日</span>日期</li>
+              <li><span class="field-icon text">T</span>订单ID</li>
+              <li><span class="field-icon text">T</span>用户ID</li>
+              <li><button class="field-item" type="button" data-field="category" draggable="true"><span class="field-icon text">T</span>商品品类</button></li>
+              <li><span class="field-icon text">T</span>下单渠道</li>
+              <li><span class="field-icon text">T</span>支付状态</li>
+              <li><span class="field-icon number">#</span>支付金额(元)</li>
+              <li><span class="field-icon number">#</span>退款金额(元)</li>
+              <li><span class="field-icon number">#</span>订单支付成功率</li>
+            </ul>
+            <div class="pivot-guide">点击“商品品类”，把它放到行维。</div>
+            <div class="pivot-drag-demo" aria-hidden="true"><span>商品品类</span></div>
+            <div class="pivot-zones">
+              <section><h3>筛选器</h3><span class="pill blue">日期：(2026-04-01 ...</span></section>
+              <section><h3>列维</h3><p>请拖拽维度列字段</p></section>
+              <section class="row-zone"><h3>行维</h3><p>请拖拽维度列字段</p></section>
+              <section><h3>指标</h3><span class="pill green">订单金额合计</span></section>
+            </div>
+          </div>
+        </aside>
+
+        <div class="task-toast">
+          <img src="assets/data-assistant-transparent.png" alt="" />
+          <strong>正在执行任务...</strong>
+          <div class="task-actions">
+            <button class="replay-btn" type="button">查看回放</button>
+            <button class="primary-task-btn" type="button">立即体验</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
