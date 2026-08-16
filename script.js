@@ -272,7 +272,7 @@
   // 程序滚动期间（点箭头切卡）暂停反向同步，避免滚动中途经过的卡片覆盖目标索引。
   let galleryProgrammaticUntil = 0;
 
-  const scrollGalleryToCard = index => {
+  const scrollGalleryToCard = (index, instant = false) => {
     const card = galleryCards[index];
     if (!card || !galleryTrack) return;
     // 手动计算目标 scrollLeft，比 scrollIntoView 在 scroll-snap 容器里更可控，
@@ -281,7 +281,7 @@
     galleryProgrammaticUntil = Date.now() + 700;
     galleryTrack.scrollTo({
       left: Math.max(0, targetLeft),
-      behavior: reducedMotion ? "auto" : "smooth"
+      behavior: (instant || reducedMotion) ? "auto" : "smooth"
     });
   };
 
@@ -343,6 +343,11 @@
   });
 
   setGalleryIndex(2);
+
+  // 移动端卡片流初始定格在第 3 张（与桌面端 active 一致），瞬时定位无滑动动画。
+  if (isMobileGallery() && galleryTrack) {
+    requestAnimationFrame(() => scrollGalleryToCard(galleryIndex, true));
+  }
 
   const tabs = [...document.querySelectorAll(".exp-tab")];
   const cards = [...document.querySelectorAll(".experience-card")];
