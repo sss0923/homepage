@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260628-1" />
+    <link rel="stylesheet" href="styles.css?v=20260816-20" />
+    <link rel="stylesheet" href="moments-arc.css?v=20260816-7" />
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -21,11 +22,12 @@
       </a>
       <nav class="desktop-nav" aria-label="主导航">
         <a class="nav-link is-active" href="#home">首页</a>
-        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#experience">实习经历</a>
         <a class="nav-link" href="#research">科研与竞赛</a>
-        <a class="nav-link" href="#work">作品集</a>
+        <a class="nav-link" href="#campus">校园经历</a>
+        <a class="nav-link" href="#evaluation">个人评价</a>
       </nav>
-      <a class="contact-pill" href="mailto:1853684927@qq.com">联系我 <span>↗</span></a>
+      <a class="contact-pill" href="mailto:1853684927@qq.com" data-contact-open>联系我 <span>↗</span></a>
       <button class="menu-button" aria-label="打开导航菜单" aria-expanded="false">
         <span></span><span></span>
       </button>
@@ -33,36 +35,65 @@
 
     <nav class="mobile-nav" aria-label="移动端导航">
       <a href="#home">首页</a>
-      <a href="#experience">Experience</a>
+      <a href="#experience">实习经历</a>
       <a href="#research">科研与竞赛</a>
-      <a href="#work">作品集</a>
-      <a href="mailto:1853684927@qq.com">联系我</a>
+      <a href="#campus">校园经历</a>
+      <a href="#evaluation">个人评价</a>
+      <a href="mailto:1853684927@qq.com" data-contact-open>联系我</a>
     </nav>
 
     <main id="main">
       <section class="hero" id="home">
         <div class="hero-copy">
           <p class="eyebrow hero-reveal">HELLO，欢迎来到我的个人主页</p>
-          <h1 class="hero-title" aria-label="我是苏弈秋，产品经理">
+          <h1 class="hero-title" aria-label="我是苏弈秋，应届生求职中">
             <span class="title-line"><span>我是苏弈秋，</span></span>
-            <span class="title-line accent-line"><span>产品经理<span class="period">。</span></span></span>
+            <span class="title-line accent-line"><span>应届生求职中<span class="period">。</span></span></span>
           </h1>
           <div class="hero-actions hero-reveal">
-            <a class="primary-button magnetic" href="#work">查看作品集 <span>↓</span></a>
-            <a class="text-link" href="#experience">认识我的经历 <span>↘</span></a>
+            <a class="primary-button magnetic" href="#gallery">五张照片快速了解我 <span>↓</span></a>
+            <a class="text-link" href="assets/苏弈秋简历20260811.pdf" download="苏弈秋简历20260811.pdf">下载我的简历 <span>↓</span></a>
           </div>
           <div class="interest-pile hero-reveal">
             <ul class="interest-chips" aria-label="我的兴趣标签">
               <li class="interest-chip chip-blue" data-r="-6">懂技术的 PM</li>
-              <li class="interest-chip" data-r="5">会敲代码</li>
-              <li class="interest-chip" data-r="-4">产品经理</li>
-              <li class="interest-chip" data-r="6">数据分析</li>
-              <li class="interest-chip" data-r="-5">Skills 贡献者</li>
-              <li class="interest-chip chip-dark" data-r="4">AI 中毒用户</li>
+              <li class="interest-chip chip-peach" data-r="5">会敲代码</li>
+              <li class="interest-chip chip-red" data-r="-4">产品经理</li>
+              <li class="interest-chip chip-amber" data-r="6">数据分析</li>
+              <li class="interest-chip chip-orange" data-r="-5">Skills 贡献者</li>
+              <li class="interest-chip chip-blue" data-r="4">中共预备党员</li>
               <li class="interest-chip chip-outline" data-r="-7">Vibe Coding</li>
-              <li class="interest-chip chip-blue" data-r="5">AI 兴趣者</li>
+              <li class="interest-chip chip-dark" data-r="5">AI 兴趣者</li>
             </ul>
           </div>
+          <section class="hero-meta hero-reveal" aria-labelledby="profile-title">
+            <div class="profile-heading">
+              <span>PROFILE / 个人概况</span>
+              <h2 id="profile-title">基本信息</h2>
+            </div>
+            <dl class="profile-grid">
+              <div class="profile-item profile-item-wide">
+                <dt>主修课程</dt>
+                <dd>多媒体编码、数据科学、移动网络编程、密码学、IT项目管理、物联网等</dd>
+              </div>
+              <div class="profile-item">
+                <dt>语言</dt>
+                <dd>雅思 6.5、CET-4、CET-6</dd>
+              </div>
+              <div class="profile-item">
+                <dt>产品技能</dt>
+                <dd>需求分析、PRD撰写、原型及流程设计、指标数据分析</dd>
+              </div>
+              <div class="profile-item">
+                <dt>办公技能</dt>
+                <dd>PowerPoint、Excel、Word、Visio、Axure、XMind</dd>
+              </div>
+              <div class="profile-item">
+                <dt>技术能力</dt>
+                <dd>Python、SQL、Matlab、Kotlin；了解机器学习、神经网络及大模型技术</dd>
+              </div>
+            </dl>
+          </section>
         </div>
 
         <div class="hero-visual hero-reveal" aria-label="个人照片占位区域">
@@ -90,11 +121,6 @@
           <div class="mini-orbit orbit-two" aria-hidden="true"></div>
         </div>
 
-        <div class="hero-meta hero-reveal">
-          <div><span>BASED IN</span><strong>深圳 / 香港</strong></div>
-          <div><span>FOCUS ON</span><strong>产品策略 · 数据分析</strong></div>
-          <div><span>PERSONALITY</span><strong>ENTJ · 系统思考者</strong></div>
-        </div>
         <div class="scroll-cue" aria-hidden="true"><span></span> SCROLL TO EXPLORE</div>
       </section>
 
@@ -105,11 +131,11 @@
             <h2 id="gallery-title">五张照片，<span>五篇关于我的故事</span></h2>
           </div>
           <div class="gallery-heading-side">
-            <p>从组织一场志愿活动，到用研究、实习与学习确认自己的方向。五张照片，记录五次真正改变我的时刻。</p>
+            <p>点击任意卡片，查看照片背后的成长故事</p>
           </div>
         </div>
 
-        <div class="gallery-track" tabindex="0" aria-label="成长影集，可横向滚动">
+        <div class="gallery-track" tabindex="0" aria-label="成长影集，使用左右方向键切换">
           <figure class="gallery-card is-active">
             <button class="story-trigger" type="button" data-story-index="0" aria-label="查看广东省大学生运动会省级优秀志愿者经历"></button>
             <div class="gallery-photo-wrap">
@@ -143,8 +169,8 @@
               <span class="gallery-seq">03</span>
             </div>
             <figcaption>
-              <div><span>新的旅程</span><time datetime="2025-06">2025.06</time></div>
-              <h3>高绩点毕业，走向<br />技术 × 产品</h3>
+              <div><span>华南理工大学·本科</span><time datetime="2025-06">2025.06</time></div>
+              <h3>跨学科探索，<br />高绩点毕业</h3>
               <p>本科 TOP 10% · 计算机辅修</p>
             </figcaption>
           </figure>
@@ -157,7 +183,7 @@
             </div>
             <figcaption>
               <div><span>实习经历</span><time datetime="2025-09">2025.09</time></div>
-              <h3>四段实习，读懂<br />真实业务如何运转</h3>
+              <h3>四段实习读懂<br />真实业务如何运转</h3>
               <p>小鹏 · 货拉拉 · 美团 · vivo</p>
             </figcaption>
           </figure>
@@ -169,25 +195,17 @@
               <span class="gallery-seq">05</span>
             </div>
             <figcaption>
-              <div><span>硕士生活</span><time datetime="2026-05">2026.05</time></div>
-              <h3>换一座校园，继续<br />站上年级 TOP 5%</h3>
+              <div><span>香港中文大学·硕士</span><time datetime="2026-05">2026.05</time></div>
+              <h3>信息工程系<br />最佳学术表现奖</h3>
               <p>Best Academic Performance Award</p>
             </figcaption>
           </figure>
         </div>
-        <div class="gallery-navigation" aria-label="影集时间线">
-          <button class="gallery-arrow gallery-prev" type="button" aria-label="查看上一张照片" disabled>←</button>
-          <div class="gallery-years">
-            <button class="gallery-year is-active" type="button" data-gallery-index="0" aria-pressed="true"><span>大一</span></button>
-            <button class="gallery-year" type="button" data-gallery-index="1" aria-pressed="false"><span>大二</span></button>
-            <button class="gallery-year" type="button" data-gallery-index="2" aria-pressed="false"><span>大四</span></button>
-            <button class="gallery-year" type="button" data-gallery-index="3" aria-pressed="false"><span>实习</span></button>
-            <button class="gallery-year" type="button" data-gallery-index="4" aria-pressed="false"><span>硕士</span></button>
-          </div>
-          <button class="gallery-arrow gallery-next" type="button" aria-label="查看下一张照片">→</button>
+        <div class="gallery-navigation" aria-label="影集切换">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="查看左侧照片" disabled>←</button>
           <span class="gallery-count"><b>01</b> / 05</span>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="查看右侧照片">→</button>
         </div>
-        <p class="gallery-story-hint">CLICK A PHOTO · 查看照片背后的故事</p>
 
         <dialog class="story-dialog" aria-labelledby="story-title">
           <div class="story-shell">
@@ -207,28 +225,12 @@
         </dialog>
       </section>
 
-      <section class="statement section-pad">
-        <p class="section-index">02 / PROFILE</p>
-        <div class="statement-copy reveal-text">
-          <span>会敲代码的产品人，</span>
-          <span>能读懂业务里的数据，</span>
-          <span>也能把模糊需求变成清晰方案。</span>
-        </div>
-        <div class="skill-marquee" aria-label="专业技能">
-          <div class="marquee-track">
-            <span>PRODUCT STRATEGY</span><i></i><span>SQL & PYTHON</span><i></i><span>USER RESEARCH</span><i></i><span>PRD & PROTOTYPE</span><i></i><span>DATA ANALYSIS</span><i></i>
-            <span>PRODUCT STRATEGY</span><i></i><span>SQL & PYTHON</span><i></i><span>USER RESEARCH</span><i></i><span>PRD & PROTOTYPE</span><i></i><span>DATA ANALYSIS</span><i></i>
-          </div>
-        </div>
-      </section>
-
       <section class="experience section-pad" id="experience">
         <div class="section-heading">
           <div>
-            <p class="section-index">03 / EXPERIENCE</p>
+            <p class="section-index">02 / INTERNSHIP EXPERIENCE</p>
             <h2>把经历，做成<br />持续增长的<span>产品力。</span></h2>
           </div>
-          <p>从 AI Agent 产品策划，到自动驾驶、货运研发与飞行汽车，我持续在数据洞察、体验设计与跨团队协同中寻找更优解。</p>
         </div>
 
         <div class="experience-layout">
@@ -241,51 +243,62 @@
 
           <div class="experience-stage">
             <article class="experience-card is-active" id="vivo" data-company="VIVO · DATA AGENT">
-              <div class="exp-topline"><span>2026.05 — 2026.09</span><span>DATA AGENT</span></div>
-              <div class="exp-brand"><span>vivo</span><small>Data Agent · 产品策划</small></div>
-              <h3>让 Data Agent<br /><span>从能力走向体验</span></h3>
-              <div class="exp-grid">
-                <div><strong>首页与体验馆</strong><p>负责 Data Agent 首页与体验馆策划，梳理核心信息、场景内容和体验路径。</p></div>
-                <div><strong>Skill 市场</strong><p>参与 Skill 市场模块策划，设计能力发现、理解与使用的产品路径。</p></div>
-                <div><strong>内容交付</strong><p>编写产品操作手册，并推进体验馆 Demo 接入与演示内容落地。</p></div>
+              <div class="exp-topline"><span>2026.05 — 至今</span><span>AI 产品经理</span></div>
+              <div class="exp-brand"><span>VIVO（维沃）移动通信有限公司</span><small>互联网大数据部－数据平台组 · AI 产品经理</small></div>
+              <div class="exp-project exp-project--sentence"><span>核心项目</span><h3>企业级 Data Agent 数据分析平台建设，实现自然语言智能问数、深度洞察功能</h3></div>
+              <div class="exp-detail-grid">
+                <div><strong>Skill 模块建设</strong><ul><li>调研 Skillhub 等平台，完成 Skill 市场、配置管理及个人/Agent 关联机制设计。</li><li>围绕漏斗分析等高频场景，设计并开发 20+ 官方数据分析 Skills。</li><li>提升专业分析任务执行能力，用户 Skills 使用率＞50%。</li></ul></div>
+                <div><strong>PC 端产品策划</strong><ul><li>策划自动化任务推送、Prompt 推荐中心、首页、体验馆等 10+ 功能，输出 Demo 与 PRD 并上线。</li><li>功能上线后自动化消息推送量 5000+，沉淀业务优质模板 50+。</li><li>业务试用推荐能力“做同款”数量达到 2000+。</li></ul></div>
+                <div><strong>评测体系搭建</strong><ul><li>设计 NL2SQL 评测数据集，覆盖标准提问与业务术语知识增强场景。</li><li>验证模型能力及知识配置效果，为后续迭代提供依据。</li></ul></div>
+                <div><strong>运营推广</strong><ul><li>负责多个版本的功能验收与上线通告编写。</li><li>搭建官方演示 Demo，跟进用户答疑。</li><li>编写并持续迭代平台操作手册。</li></ul></div>
               </div>
-              <div class="exp-foot"><a class="demo-link" href="data-agent-demo/index.html" target="_blank" rel="noopener">打开体验馆 Demo <span>↗</span></a><span>Data Agent</span><span>体验策划</span><span>Skill 市场</span><span>操作手册</span></div>
+              <div class="exp-foot"><a class="demo-link" href="data-agent-demo/index.html" target="_blank" rel="noopener">打开体验馆 Demo <span>↗</span></a><a class="demo-link demo-link--ghost" href="https://github.com/sss0923/software-docs" target="_blank" rel="noopener">Skills 沉淀：操作手册 <span>↗</span></a></div>
             </article>
 
             <article class="experience-card" id="meituan" data-company="MEITUAN" hidden>
-              <div class="exp-topline"><span>2025.05 — 2025.08</span><span>北京 / 深圳</span></div>
-              <div class="exp-brand"><span>美团科技</span><small>无人车业务部 · 产品运营实习生</small></div>
-              <h3>让自动驾驶里程占比<br />从 <em>57%</em> 稳定提升至 <em>70%</em></h3>
-              <div class="exp-grid">
-                <div><strong>数据监控</strong><p>建设指标体系与日分析报告，基于 SQL 多表聚合搭建自动化看板。</p></div>
-                <div><strong>产品闭环</strong><p>对异常订单进行 By Case 分析与聚类，联动路测、数仓、算法推动修复。</p></div>
-                <div><strong>业务支持</strong><p>参与四轮即配高频点位测试，并完成沙特外卖配送多源数据分析。</p></div>
+              <div class="exp-topline"><span>2025.05 — 2025.09</span><span>产品运营</span></div>
+              <div class="exp-brand"><span>美团科技有限公司</span><small>无人车业务部－技术运营组 · 产品运营</small></div>
+              <div class="exp-meituan-layout">
+                <div class="exp-meituan-copy">
+                  <div class="exp-project"><span>核心项目</span><h3>同城自动配送产品优化及自动驾驶里程占比提升</h3></div>
+                  <div class="exp-detail-grid">
+                    <div><strong>数据监控与分析</strong><ul><li>监控自动配送驾驶里程占比，分析数据异动。</li><li>建设指标体系，持续输出日指标分析报告。</li></ul></div>
+                    <div><strong>看板搭建</strong><ul><li>基于 SQL 与多表聚合实现指标自动化统计。</li><li>减少重复数据处理，提升分析效率。</li></ul></div>
+                    <div><strong>产品优化</strong><ul><li>对异常订单进行 by case 分析与聚类归因，联动算法、路测团队完成问题修复。</li><li>针对换电、车机及缺图问题输出 PRD，并推动方案落地。</li><li>建立“发现－分析－解决－复盘”闭环，使自动驾驶里程占比由 57% 提升至 70% 稳定水平。</li></ul></div>
+                    <div><strong>产品测试</strong><ul><li>部署测试版本，跟进并记录异常问题。</li><li>输出周维度测试报告，支持无人化点位交付。</li></ul></div>
+                  </div>
+                </div>
+                <figure class="exp-vehicle-visual">
+                  <img src="assets/meituan-autonomous-delivery-vehicle.png" width="1475" height="1022" alt="美团无人配送车" loading="lazy" />
+                </figure>
               </div>
-              <div class="exp-foot"><span>SQL</span><span>指标体系</span><span>PRD</span><span>跨团队协作</span></div>
             </article>
 
             <article class="experience-card" id="lalamove" data-company="LALAMOVE" hidden>
-              <div class="exp-topline"><span>2024.10 — 2025.03</span><span>深圳</span></div>
-              <div class="exp-brand"><span>货拉拉科技</span><small>货运研发部 · 产品项目实习生</small></div>
-              <h3>从 0 到 1 搭建<br />后端研发<span>协同工作流</span></h3>
-              <div class="exp-grid">
-                <div><strong>产品设计</strong><p>梳理互联网研发工作流，完成个人工作台立项、PRD 与终端原型。</p></div>
-                <div><strong>效能分析</strong><p>设计数据口径与可视化看板，交付 5 份月度效能报告。</p></div>
-                <div><strong>预测模型</strong><p>以 Python 建立项目颗粒度与交付周期回归模型，识别异常交付。</p></div>
+              <div class="exp-topline"><span>2024.10 — 2025.03</span><span>产品经理</span></div>
+              <div class="exp-brand"><span>依时货拉拉科技有限公司</span><small>货运研发部－平台后端组 · 产品经理</small></div>
+              <div class="exp-project"><span>核心项目</span><h3>研发协同工作流与交付效能体系建设</h3></div>
+              <div class="exp-detail-grid exp-detail-grid--compact">
+                <div><strong>流程体系产品设计</strong><ul><li>针对研发任务分散、依赖人工推进的问题，从 0 到 1 搭建后端部门线上工作流体系。</li><li>完成研发协同工作台 MVP 方案，负责流程梳理、立项文档、PRD 与原型设计。</li><li>推动研发任务实现标准化、可视化和自动化。</li></ul></div>
+                <div><strong>交付数据分析</strong><ul><li>设计数据口径并搭建可视化看板，输出 5 份月度效能分析报告。</li><li>协同 PMO 对齐指标口径，使数据准确率由 86.2% 提升至 98.9%。</li><li>使用 Python 搭建项目颗粒度与交付周期回归预测模型，识别异常交付情况。</li></ul></div>
               </div>
-              <div class="exp-foot"><span>Axure</span><span>Python</span><span>流程设计</span><span>项目管理</span></div>
             </article>
 
             <article class="experience-card" id="xiaopeng" data-company="XPENG" hidden>
-              <div class="exp-topline"><span>2024.07 — 2024.10</span><span>广州</span></div>
-              <div class="exp-brand"><span>小鹏汽车</span><small>项目管理部 · 项目管理实习生</small></div>
-              <h3>参与 X3 飞行汽车<br /><span>从 BOM 到整车节点</span></h3>
-              <div class="exp-grid">
-                <div><strong>状态管理</strong><p>管理陆行体、飞行体试制 BOM，推动数据 100% 准确通过 ET1 节点。</p></div>
-                <div><strong>流程体系</strong><p>编写航空构型基线管理方案、物料清单设变规范与勘误模板。</p></div>
-                <div><strong>系统协同</strong><p>维护 ERP 与 BOM 系统数据，组织评审会、设变会并同步需求。</p></div>
+              <div class="exp-topline"><span>2024.07 — 2024.10</span><span>项目管理</span></div>
+              <div class="exp-brand"><span>小鹏汽车科技有限公司</span><small>项目管理部－流程体系组 · 项目管理</small></div>
+              <div class="exp-meituan-layout">
+                <div class="exp-meituan-copy">
+                  <div class="exp-project"><span>核心项目</span><h3>飞行汽车技术状态管理与流程体系建设</h3></div>
+                  <div class="exp-detail-grid">
+                    <div><strong>流程体系建设</strong><ul><li>编写航空构型基线文件管理方案与产品物料清单变更规范。</li><li>完善勘误模板等配套文件，提升技术状态数据管理的规范性与准确性。</li></ul></div>
+                    <div><strong>技术状态管理</strong><ul><li>负责小鹏汇天 X3 飞行汽车陆行体与飞行体试制 BOM 及技术状态管理。</li><li>组织 BOM 模板评审和设计变更会议，跟进变更需求并维护 ERP 系统数据。</li><li>确保数据以 100% 准确率通过 ET1 整车开发节点。</li></ul></div>
+                  </div>
+                </div>
+                <figure class="exp-vehicle-visual">
+                  <img src="assets/xpeng-flying-car.png" alt="小鹏汇天飞行汽车" loading="lazy" />
+                </figure>
               </div>
-              <div class="exp-foot"><span>BOM</span><span>ERP</span><span>流程体系</span><span>整车开发</span></div>
             </article>
           </div>
         </div>
@@ -294,111 +307,235 @@
       <section class="research section-pad" id="research">
         <div class="section-heading light-heading">
           <div>
-            <p class="section-index">04 / RESEARCH & AWARDS</p>
+            <p class="section-index">03 / RESEARCH & AWARDS</p>
             <h2>好奇心落地，<br />就会变成<span>结果。</span></h2>
           </div>
-          <p>从低碳行为研究到校园跑腿产品，我喜欢从一个真实问题出发，组织团队，把研究、产品和表达串成完整故事。</p>
         </div>
 
-        <div class="research-grid">
-        <article class="featured-project project-reveal">
-          <div class="project-visual sem-visual">
-            <div class="axis axis-x"></div><div class="axis axis-y"></div>
-            <div class="data-node node-a"><span>政策感知</span></div>
-            <div class="data-node node-b"><span>行为意愿</span></div>
-            <div class="data-node node-c"><span>节能行为</span></div>
-            <svg class="data-lines" viewBox="0 0 600 420" aria-hidden="true">
-              <path d="M130 130 C230 70 330 120 430 190"></path>
-              <path d="M150 150 C210 260 330 280 450 230"></path>
-              <path d="M430 200 C500 240 490 310 420 340"></path>
-            </svg>
-            <span class="visual-label">STRUCTURAL EQUATION MODEL</span>
-          </div>
-          <div class="project-content">
-            <div class="project-number">01</div>
-            <p class="project-type">RESEARCH · TEAM LEADER</p>
-            <h3>政策视域下高校学生<br />节能减排行为研究</h3>
-            <p>以问卷与实地访谈构建潜变量，使用 AMOS 建立结构方程模型。作为第一负责人，主导研究设计、数据分析、论文与答辩。</p>
-            <div class="award-badge"><span>全国三等奖</span> 全国大学生节能减排社会实践与科技竞赛</div>
-          </div>
-        </article>
-
-        <div class="project-pair">
-          <article class="small-project project-reveal">
-            <div class="project-placeholder dark-placeholder">
-              <span>PROJECT SCREENSHOT</span><small>校园跑腿平台 · 原型图待替换</small>
+        <div class="archive-system">
+          <section class="honors-file honors-reveal" aria-labelledby="honors-title">
+            <span class="honors-border-glow" aria-hidden="true"></span>
+            <div class="honors-file-head">
+              <p>SELECTED HONORS · 2021—2026</p>
+              <h3 id="honors-title"><span class="count-up" data-count="10">0</span> 项学术奖项</h3>
             </div>
-            <div class="small-project-copy">
-              <p>PRODUCT DESIGN · COURSE PROJECT</p>
-              <h3>校园跑腿平台软件系统</h3>
-              <span>市场调研 / 需求分析 / 模块设计 / 原型设计</span>
-            </div>
-          </article>
-          <article class="award-board project-reveal">
-            <p>SELECTED HONORS</p>
-            <h3><span class="count-up" data-count="8">0</span><small>项代表性荣誉</small></h3>
-            <ul>
-              <li><span>全国大学生交通科技大赛</span><strong>国家二等奖</strong></li>
-              <li><span>亚太杯数学建模竞赛</span><strong>三等奖</strong></li>
-              <li><span>温氏筠诚 / 广科企业奖学金</span><strong>奖学金</strong></li>
-              <li><span>华南理工大学二等奖学金</span><strong>校级</strong></li>
+            <ul class="honors-index">
+              <li><span>01</span>温氏筠诚奖学金</li>
+              <li><span>02</span>广东广科企业奖学金</li>
+              <li><span>03</span>香港中文大学最佳学术表现奖（TOP 5%）</li>
+              <li><span>04</span>华南理工大学二等奖学金</li>
+              <li><span>05</span>全国大学生节能减排社会实践与科技竞赛三等奖（国家级）</li>
+              <li><span>06</span>全国大学生交通科技大赛二等奖（国家级）</li>
+              <li><span>07</span>亚太杯数模比赛三等奖</li>
+              <li><span>08</span>华南理工大学交通科技大赛三等奖</li>
+              <li><span>09</span>华南理工大学节能减排大赛二等奖</li>
+              <li><span>10</span>华南理工大学调研大赛三等奖</li>
             </ul>
-          </article>
-        </div>
-        </div>
-      </section>
+          </section>
 
-      <section class="work section-pad" id="work">
-        <div class="section-heading">
-          <div>
-            <p class="section-index">05 / SELECTED WORK</p>
-            <h2>作品不只展示结果，<br />更展示<span>如何思考。</span></h2>
-          </div>
-          <p>这里为你的产品方案、数据看板和原型项目预留了完整作品位。替换截图与链接后，就能成为求职时最有说服力的一页。</p>
-        </div>
-
-        <div class="work-grid">
-          <article class="work-card work-card-large tilt-card">
-            <div class="work-image blue-work">
-              <div class="dashboard-mock">
-                <div class="mock-sidebar"></div>
-                <div class="mock-content"><span></span><span></span><div class="mock-chart"></div></div>
+          <div class="project-files project-reveal" aria-label="科研项目档案">
+            <details class="project-file file-blue">
+              <summary aria-expanded="false">
+                <span class="folder-number">01</span>
+                <span class="folder-title">政策视域下基于结构方程模型对高校学生节能减排行为影响因素的研究</span>
+                <span class="folder-role">第一负责人（队长）</span>
+              </summary>
+              <div class="file-paper">
+                <div class="file-paper-head">
+                  <h3>政策视域下基于结构方程模型对高校学生节能减排行为影响因素的研究</h3>
+                  <span>01 · 第一负责人（队长）</span>
+                </div>
+                <p>基于问卷调查、实地访谈等方法集合，选用潜变量构建结构方程模型，利用amos结构方程模型分析软件处理数据，得出正逆关系结论，有效推进高校社会低碳环境的形成，获得全国节能减排社会实践与科技竞赛三等奖。</p>
+                <p>作为队长在团队中负责数据分析工作，带领团队设计问卷及选用研究方法，负责撰写论文及制作PPT。</p>
               </div>
-              <span class="replace-hint">替换为产品 / 数据看板截图</span>
-            </div>
-            <div class="work-info"><span>01 / DATA PRODUCT</span><h3>自动驾驶运营数据看板</h3><p>指标体系 · 数据洞察 · 异常归因</p></div>
-          </article>
-          <article class="work-card tilt-card">
-            <div class="work-image cream-work"><span class="big-type">FLOW</span><span class="replace-hint">替换为流程工作台原型</span></div>
-            <div class="work-info"><span>02 / WORKFLOW</span><h3>研发协同工作台</h3><p>0-1 产品设计 · 流程自动化</p></div>
-          </article>
-          <article class="work-card tilt-card">
-            <div class="work-image black-work"><span class="prototype-dot"></span><span class="big-type">RUN</span><span class="replace-hint">替换为校园跑腿产品原型</span></div>
-            <div class="work-info"><span>03 / APP DESIGN</span><h3>校园跑腿平台</h3><p>用户研究 · 需求文档 · 原型</p></div>
-          </article>
+            </details>
+
+            <details class="project-file file-silver">
+              <summary aria-expanded="false">
+                <span class="folder-number">02</span>
+                <span class="folder-title">考虑DOS攻击下CAV车队匝道合流的安全分布式控制器设计</span>
+                <span class="folder-role">第二负责人</span>
+              </summary>
+              <div class="file-paper">
+                <div class="file-paper-head">
+                  <h3>考虑DOS攻击下CAV车队匝道合流的安全分布式控制器设计</h3>
+                  <span>02 · 第二负责人</span>
+                </div>
+                <p>基于V2V网联自动驾驶车辆LPF通信拓扑网络，设计了结合卡尔曼滤波的安全分布式观测器，以及基于该观测器的PID双环控制分布式控制器，实现了安全的分布式车队合流及车队编队跟踪，具有期望的15m纵向安全间距和领航车辆引导的相同速度和加速度，获得全国大学生交通科技大赛二等奖。</p>
+                <p>作为第二作者在团队中负责总体研究框架设计，车队控制方案设计，撰写论文及制作PPT及仿真视频工作。</p>
+              </div>
+            </details>
+
+            <details class="project-file file-gray">
+              <summary aria-expanded="false">
+                <span class="folder-number">03</span>
+                <span class="folder-title">基于地铁客货同列的地下物流系统设计研究</span>
+                <span class="folder-role">核心成员</span>
+              </summary>
+              <div class="file-paper">
+                <div class="file-paper-head">
+                  <h3>基于地铁客货同列的地下物流系统设计研究</h3>
+                  <span>03 · 核心成员</span>
+                </div>
+                <p>建立基于归档式退火算法NAMOSA的地下物流网络模型函数设计，本人负责项目商业计划书撰写工作，平台设计工作，撰写论文及制作PPT，推动项目落地。</p>
+              </div>
+            </details>
+
+            <details class="project-file file-white">
+              <summary aria-expanded="false">
+                <span class="folder-number">04</span>
+                <span class="folder-title">校园跑腿平台软件系统设计（课程设计）</span>
+                <span class="folder-role">产品设计</span>
+              </summary>
+              <div class="file-paper">
+                <div class="file-paper-head">
+                  <h3>校园跑腿平台软件系统设计（课程设计）</h3>
+                  <span>04 · 产品设计</span>
+                </div>
+                <p>设计了一款校园跑腿软件，实现发单用户发布跑腿任务，接单用户接单后在规定时间完成并获得报酬的功能。</p>
+                <p>本人负责产品总体设计、市场调研与需求说明书及软件详细说明书攥写，设计了软件各模块结构、功能以及原型图。</p>
+              </div>
+            </details>
+          </div>
         </div>
       </section>
 
-      <section class="about section-pad">
-        <div class="about-grid">
-          <div class="about-title">
-            <p class="section-index">06 / MORE ABOUT ME</p>
-            <h2>一个有社会责任感的<br /><span>ENTJ</span></h2>
-          </div>
-          <div class="about-copy">
-            <p>热爱创新创造，也认真参与公共生活。作为校公益组织骨干，我累计志愿服务超过 300 小时；作为团队负责人，我更享受把不同的人组织起来，一起把事情推进到底。</p>
-            <div class="about-stats">
-              <div><strong class="count-up" data-count="300">0</strong><span>+ 志愿小时</span></div>
-              <div><strong>10%</strong><span>本科专业排名</span></div>
-              <div><strong>3.67</strong><span>/ 4.0 GPA</span></div>
-            </div>
+      <section class="campus section-pad" id="campus">
+        <div class="section-heading campus-heading">
+          <div>
+            <p class="section-index">05 / CAMPUS EXPERIENCE</p>
+            <h2>在服务他人中，<br />长出自己的<span>力量。</span></h2>
           </div>
         </div>
-        <div class="tool-cloud" aria-label="技能工具">
-          <span>Python</span><span>SQL</span><span>Axure</span><span>墨刀</span><span>XMind</span><span>Matlab</span><span>Stata</span><span>Visio</span><span>PowerPoint</span><span>SPSS</span>
+
+        <div class="campus-list">
+          <article class="campus-entry">
+            <span class="campus-number">01</span>
+            <div class="campus-role">
+              <h3>华南理工大学校青年志愿者指导中心实践部</h3>
+              <strong>副部长</strong>
+            </div>
+            <time datetime="2021-09/2025-07">2021.09 — 2025.07</time>
+            <ul><li>负责校内外百余项志愿活动的志愿者招募工作。</li><li>担任广东省大学生运动会志愿者招募负责人。</li></ul>
+          </article>
+
+          <article class="campus-entry">
+            <span class="campus-number">02</span>
+            <div class="campus-role">
+              <h3>土木与交通学院学生会志愿实践部</h3>
+              <strong>部长</strong>
+            </div>
+            <time datetime="2021-09/2025-07">2021.09 — 2025.07</time>
+            <ul><li>负责全院志愿活动招募及志愿时录入工作。</li><li>组织学院定向越野比赛，策划“三下乡”活动并获国家级重点团队立项。</li></ul>
+          </article>
+
+          <article class="campus-entry">
+            <span class="campus-number">03</span>
+            <div class="campus-role">
+              <h3>土木与交通学院党建委员会组织部</h3>
+              <strong>干事</strong>
+            </div>
+            <time datetime="2021-09/2022-09">2021.09 — 2022.09</time>
+            <ul><li>参与组织入党看齐班及考试工作，负责制作并批改入党积极分子试卷。</li></ul>
+          </article>
+        </div>
+
+        <div class="campus-honors">
+          <span class="campus-honors-label">HONORS / 所获荣誉</span>
+          <ul>
+            <li>校优秀公益组织骨干</li>
+            <li>院学生会优秀干事</li>
+            <li>党建委优秀干事</li>
+            <li>广东省大运会省级优秀志愿者</li>
+            <li>校抗疫积极分子</li>
+            <li>一星志愿者</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="evaluation section-pad" id="evaluation">
+        <div class="evaluation-layout">
+          <div class="evaluation-main">
+            <header class="evaluation-heading evaluation-intro">
+              <div class="evaluation-heading-copy">
+                <p class="section-index">06 / PERSONAL EVALUATION</p>
+                <h2>个人评价</h2>
+                <p class="evaluation-summary">兼具产品思维、数据分析与技术能力，有系统流程思维，擅长通过数据洞察问题并推动产品优化；在校成绩优异，具备扎实的科研实践与竞赛成果；善于沟通，拥有丰富的学生组织及团队协作经验。</p>
+              </div>
+            </header>
+            <div class="evaluation-subsection-title evaluation-advantage-title">
+              <span>PERSONAL ADVANTAGE / 个人优势</span>
+              <h3>会敲代码，了解技术</h3>
+            </div>
+            <div class="evaluation-capabilities" aria-label="个人优势">
+              <article class="evaluation-capability">
+                <div class="capability-title"><h3>技术知识体系</h3></div>
+                <p>了解机器学习、神经网络、自然语言处理及大语言模型等人工智能基础理论；掌握 Python、Kotlin 等编程语言。</p>
+              </article>
+              <article class="evaluation-capability">
+                <div class="capability-title"><h3>产品能力</h3></div>
+                <p>具备从需求洞察、流程设计、PRD 撰写、原型设计到产品验收的完整产品策划能力，能够使用 AI Coding 工具快速搭建产品 Demo；擅长用数据驱动业务优化，通过分层下钻、聚类归因等方法定位问题、制定策略，推动产品体验优化与核心指标提升。</p>
+              </article>
+              <article class="evaluation-capability">
+                <div class="capability-title"><h3>项目管理理论</h3></div>
+                <p>熟悉互联网产品全流程生命周期项目管理流程；新能源汽车整车开发流程；敏捷开发等理论知识。</p>
+              </article>
+            </div>
+            <div class="evaluation-personality evaluation-personality-block">
+              <div class="evaluation-subsection-title evaluation-personality-title">
+                <span>PERSONALITY / 个人性格</span>
+                <h3>一个有社会责任感的 ENTJ</h3>
+              </div>
+              <p>热爱公益，作为校公益组织骨干组织多项活动，累计志愿时长 300 小时；热爱创新创造，作为队长从 0-1 搭建科研项目均获国奖。</p>
+            </div>
+          </div>
+
+          <aside class="evaluation-side">
+            <figure class="evaluation-visual" aria-label="产品、数据与技术能力构成的三维动态核心">
+              <div class="evaluation-orb" aria-hidden="true">
+                <div class="orb-glow"></div>
+                <canvas class="orb-canvas"></canvas>
+                <div class="orb-ring orb-ring-a"><i></i></div>
+                <div class="orb-ring orb-ring-b"><i></i></div>
+                <div class="orb-ring orb-ring-c"><i></i></div>
+                <span class="orb-satellite orb-satellite-a"></span>
+                <span class="orb-satellite orb-satellite-b"></span>
+                <span class="orb-satellite orb-satellite-c"></span>
+              </div>
+            </figure>
+          </aside>
         </div>
       </section>
     </main>
+
+    <dialog class="contact-dialog" aria-labelledby="contact-title">
+      <div class="contact-shell">
+        <button class="contact-close" type="button" aria-label="关闭联系方式">关闭 <span>×</span></button>
+        <div class="contact-heading">
+          <p>CONTACT / 联系方式</p>
+          <h2 id="contact-title">联系我</h2>
+        </div>
+        <div class="contact-options">
+          <div class="contact-option contact-direct" aria-label="邮箱和手机号">
+            <a class="contact-direct-row" href="mailto:1853684927@qq.com">
+              <span class="contact-number">01</span>
+              <div><small>EMAIL / 邮箱</small><strong>1853684927@qq.com</strong><p>点击打开邮件客户端</p></div>
+              <i aria-hidden="true">↗</i>
+            </a>
+            <a class="contact-direct-row" href="tel:+8613430661919">
+              <span class="contact-number">02</span>
+              <div><small>PHONE / 手机</small><strong>13430661919</strong><p>点击拨打电话</p></div>
+              <i aria-hidden="true">↗</i>
+            </a>
+          </div>
+          <div class="contact-option contact-wechat">
+            <span class="contact-number">03</span>
+            <div class="wechat-copy"><small>WECHAT / 微信</small><strong>微信号 syq1853684927</strong><p>使用微信扫描二维码添加好友</p></div>
+            <img src="assets/wechat-qr.jpg" width="592" height="786" alt="苏弈秋的微信二维码，微信号 syq1853684927" />
+          </div>
+        </div>
+      </div>
+    </dialog>
 
     <footer class="site-footer">
       <p class="footer-kicker">LET'S BUILD SOMETHING USEFUL.</p>
@@ -409,10 +546,9 @@
         <div><span>LOCATION</span><strong>SHENZHEN · CHINA</strong></div>
         <button class="back-top" aria-label="回到页面顶部">↑</button>
       </div>
-      <p class="copyright">© 2026 SU YIQIU. DESIGNED WITH CURIOSITY.</p>
     </footer>
 
     <script src="assets/vendor/gsap.min.js"></script>
-    <script src="script.js?v=20260628-1"></script>
+    <script src="script.js?v=20260816-13"></script>
   </body>
 </html>

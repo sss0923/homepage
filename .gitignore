@@ -21,3 +21,12 @@ dist/
 build/
 coverage/
 
+
+# === 部署到 GitHub Pages 时排除（非网站内容） ===
+open-design*.exe
+tmp/
+.tmp-video-tools/
+.workbuddy/
+.agents/
+opendesign/
+design-system/
