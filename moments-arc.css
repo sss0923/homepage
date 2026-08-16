@@ -233,6 +233,13 @@
   .gallery-track::before,
   .gallery-track::after { display: none; }
 
+  /* 移动端点击后 track/trigger 会拿到焦点，桌面端的蓝色 focus outline 会显示为
+     一条横贯全宽的蓝线，触屏操作不需要焦点框，这里关掉（桌面端保留无障碍焦点样式） */
+  .gallery-track:focus,
+  .gallery-track:focus-visible,
+  .gallery-track .story-trigger:focus,
+  .gallery-track .story-trigger:focus-visible { outline: none; }
+
   .gallery-card,
   .gallery-card:first-child,
   .gallery-card:nth-child(1),
