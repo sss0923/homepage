@@ -269,18 +269,28 @@
 
   const isMobileGallery = () => window.innerWidth <= 767;
 
+  // 程序滚动期间（点箭头切卡）暂停反向同步，避免滚动中途经过的卡片覆盖目标索引。
+  let galleryProgrammaticUntil = 0;
+
+  const scrollGalleryToCard = index => {
+    const card = galleryCards[index];
+    if (!card || !galleryTrack) return;
+    // 手动计算目标 scrollLeft，比 scrollIntoView 在 scroll-snap 容器里更可控，
+    // 避免移动端浏览器平滑滚动过冲跳到更远的卡片。
+    const targetLeft = card.offsetLeft + card.offsetWidth / 2 - galleryTrack.clientWidth / 2;
+    galleryProgrammaticUntil = Date.now() + 700;
+    galleryTrack.scrollTo({
+      left: Math.max(0, targetLeft),
+      behavior: reducedMotion ? "auto" : "smooth"
+    });
+  };
+
   const goToGalleryCard = index => {
     const cardCount = galleryCards.length;
     const nextIndex = ((index % cardCount) + cardCount) % cardCount;
     setGalleryIndex(nextIndex);
     // 移动端卡片流的位置由滚动决定，切卡时同步把目标卡片滚到视口中心。
-    if (isMobileGallery() && galleryTrack) {
-      galleryCards[nextIndex]?.scrollIntoView({
-        behavior: reducedMotion ? "auto" : "smooth",
-        inline: "center",
-        block: "nearest"
-      });
-    }
+    if (isMobileGallery() && galleryTrack) scrollGalleryToCard(nextIndex);
   };
 
   // 移动端手动滑动卡片流时，反向同步计数器与 active 状态。
@@ -289,6 +299,7 @@
     if (!isMobileGallery() || galleryScrollRaf) return;
     galleryScrollRaf = requestAnimationFrame(() => {
       galleryScrollRaf = null;
+      if (Date.now() < galleryProgrammaticUntil) return;
       const trackRect = galleryTrack.getBoundingClientRect();
       const center = trackRect.left + trackRect.width / 2;
       let bestIndex = 0;
