@@ -3155,6 +3155,8 @@ button { font: inherit; }
   .campus-role h3 { font-size: 17px; }
   .campus-honors ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .campus-honors li { white-space: normal; }
+  #xiaopeng .exp-vehicle-visual { display: none; }
+  #xiaopeng .exp-meituan-layout { gap: 0; }
   .evaluation-heading h2 { font-size: clamp(42px, 14vw, 62px); }
   .evaluation-summary { max-width: none; padding: 0; font-size: 16px; }
   .evaluation-capability {
@@ -3357,12 +3359,14 @@ button { font: inherit; }
 
 @media (max-width: 1024px) {
   .exp-meituan-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
   }
 
   .exp-vehicle-visual {
-    min-height: 210px;
+    order: 2;
+    min-height: auto;
     padding: 24px 0 0;
     border-top: 1px solid var(--line);
     border-left: 0;
