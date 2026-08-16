@@ -184,13 +184,6 @@
       lead: "我发现很多产品判断都建立在对数据与技术的理解之上。因此，我进入香港中文大学信息工程硕士项目继续学习。为了成为懂底层技术的产品经理，我主动补足开发与 AI 能力。",
       stats: [["3.71/4.0", "GPA"], ["TOP 5%", "全年级排名"], ["最佳学术表现奖", "信息工程系"]],
       body: `
-        <section class="story-learning" aria-label="硕士阶段学习重点">
-          <ul>
-            <li><strong>开发与架构</strong><span>学习 Android、HTTP、Socket、数据库、云服务、消息队列与分布式架构，理解客户端到服务端的实现链路。</span></li>
-            <li><strong>多媒体与 AI</strong><span>覆盖音视频压缩、图像处理、CNN、多模态大模型与生成式 AI，理解智能媒体能力的实现。</span></li>
-            <li><strong>数据与用户</strong><span>学习统计分析、数据建模、可视化、文本挖掘、深度学习与社交网络分析，将数据转化为用户洞察。</span></li>
-          </ul>
-        </section>
         <section class="story-courses" aria-label="核心课程">
           <p class="story-courses-title">CORE COURSES <span>核心课程</span></p>
           <span>IT 管理</span><span>安卓开发</span><span>多媒体编码</span><span>密码学</span><span>社交网络</span><span>数据科学</span>
@@ -254,7 +247,7 @@
       year.setAttribute("aria-pressed", String(active));
     });
 
-    if (hasChanged && !reducedMotion && window.gsap) {
+    if (hasChanged && !reducedMotion && window.gsap && window.innerWidth > 767) {
       const activeCard = galleryCards[galleryIndex];
       const photo = activeCard?.querySelector(".gallery-photo-wrap");
       const copy = activeCard ? [...activeCard.querySelectorAll("figcaption > div, figcaption h3, figcaption p")] : [];
@@ -274,9 +267,40 @@
     }
   };
 
+  const isMobileGallery = () => window.innerWidth <= 767;
+
   const goToGalleryCard = index => {
-    setGalleryIndex(index);
+    const cardCount = galleryCards.length;
+    const nextIndex = ((index % cardCount) + cardCount) % cardCount;
+    setGalleryIndex(nextIndex);
+    // 移动端卡片流的位置由滚动决定，切卡时同步把目标卡片滚到视口中心。
+    if (isMobileGallery() && galleryTrack) {
+      galleryCards[nextIndex]?.scrollIntoView({
+        behavior: reducedMotion ? "auto" : "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+    }
   };
+
+  // 移动端手动滑动卡片流时，反向同步计数器与 active 状态。
+  let galleryScrollRaf = null;
+  galleryTrack?.addEventListener("scroll", () => {
+    if (!isMobileGallery() || galleryScrollRaf) return;
+    galleryScrollRaf = requestAnimationFrame(() => {
+      galleryScrollRaf = null;
+      const trackRect = galleryTrack.getBoundingClientRect();
+      const center = trackRect.left + trackRect.width / 2;
+      let bestIndex = 0;
+      let bestDist = Infinity;
+      galleryCards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        const dist = Math.abs(rect.left + rect.width / 2 - center);
+        if (dist < bestDist) { bestDist = dist; bestIndex = i; }
+      });
+      if (bestIndex !== galleryIndex) setGalleryIndex(bestIndex);
+    });
+  }, { passive: true });
 
   galleryPrev?.addEventListener("click", () => goToGalleryCard(galleryIndex - 1));
   galleryNext?.addEventListener("click", () => goToGalleryCard(galleryIndex + 1));
@@ -293,8 +317,13 @@
   });
   document.querySelectorAll(".story-trigger").forEach(trigger => trigger.addEventListener("click", () => {
     const index = Number(trigger.dataset.storyIndex);
-    if (index === galleryIndex) openGalleryStory(index);
-    else goToGalleryCard(index);
+    // 移动端卡片流：点击任意可见卡片直接打开详情，无需先切到 active。
+    if (isMobileGallery()) {
+      openGalleryStory(index);
+    } else {
+      if (index === galleryIndex) openGalleryStory(index);
+      else goToGalleryCard(index);
+    }
   }));
   storyClose?.addEventListener("click", closeGalleryStory);
   storyDialog?.addEventListener("close", () => { document.body.style.overflow = ""; });

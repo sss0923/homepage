@@ -208,12 +208,31 @@
 }
 
 @media (max-width: 767px) {
-  .gallery-story { min-height: 760px; padding: 78px 20px 44px; }
+  /* 移动端：深色横向滑动卡片流，替代 3D 弧形扇形布局 */
+  .gallery-story { min-height: 0; padding: 78px 20px 44px; }
   .gallery-heading { display: block; }
   .gallery-heading h2 { font-size: 35px; }
   .gallery-heading-side { margin-top: 14px; }
-  .gallery-heading-side > p { max-width: 330px; font-size: 11px; }
-  .gallery-track { display: block; width: calc(100% + 40px); height: 420px; min-height: 0; margin: 18px -20px 0; padding: 0; overflow: visible; scroll-snap-type: none; }
+  .gallery-heading-side > p { max-width: 330px; font-size: 12px; }
+
+  .gallery-track {
+    display: flex;
+    gap: 14px;
+    width: calc(100% + 40px);
+    height: auto;
+    min-height: 0;
+    margin: 24px -20px 0;
+    padding: 8px 20px 26px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 20px;
+    perspective: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gallery-track::before,
+  .gallery-track::after { display: none; }
+
   .gallery-card,
   .gallery-card:first-child,
   .gallery-card:nth-child(1),
@@ -221,27 +240,82 @@
   .gallery-card:nth-child(3),
   .gallery-card:nth-child(4),
   .gallery-card:nth-child(5),
-  .gallery-card.is-active {
-    inset: 14px auto auto 50%;
-    display: block;
-    grid-template: none;
-    width: 210px;
-    max-width: none;
-    height: 315px;
+  .gallery-card.is-active,
+  .gallery-card:hover,
+  .gallery-card.is-active:hover {
+    position: relative;
+    inset: auto;
+    flex: 0 0 78vw;
+    width: 78vw;
+    max-width: 300px;
+    height: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
     margin: 0;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 18px;
+    background: #17171a;
+    box-shadow: 0 18px 44px rgba(0,0,0,.4);
+    opacity: 1;
+    visibility: visible;
+    filter: none;
+    transform: none;
+    scroll-snap-align: center;
+    pointer-events: auto;
   }
-  .gallery-card[data-offset="-2"] { --arc-x: -220px; --arc-y: 82px; --arc-r: -16deg; --arc-scale: .72; }
-  .gallery-card[data-offset="-1"] { --arc-x: -124px; --arc-y: 38px; --arc-r: -9deg; --arc-scale: .88; }
-  .gallery-card[data-offset="0"] { --arc-x: 0px; --arc-y: 0px; --arc-r: 0deg; --arc-scale: 1.02; }
-  .gallery-card[data-offset="1"] { --arc-x: 124px; --arc-y: 38px; --arc-r: 9deg; --arc-scale: .88; }
-  .gallery-card[data-offset="2"] { --arc-x: 220px; --arc-y: 82px; --arc-r: 16deg; --arc-scale: .72; }
+  /* 弧形位移变量在移动端全部归零 */
+  .gallery-card[data-offset="-2"],
+  .gallery-card[data-offset="-1"],
+  .gallery-card[data-offset="0"],
+  .gallery-card[data-offset="1"],
+  .gallery-card[data-offset="2"] { --arc-x: 0px; --arc-y: 0px; --arc-r: 0deg; --arc-scale: 1; --hover-y: 0px; }
+
+  .gallery-photo-wrap {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 0;
+    background: #202024;
+  }
+  .gallery-photo-wrap img { transform: none; transition: none; }
+  .gallery-card:hover img,
+  .gallery-card.is-active:hover img { transform: none; }
+
   .gallery-card figcaption,
-  .gallery-card.is-active figcaption { min-height: 128px; padding: 48px 15px 15px; }
+  .gallery-card.is-active figcaption {
+    position: static;
+    inset: auto;
+    min-height: 0;
+    padding: 14px 16px 16px;
+    background: transparent;
+    color: #fff;
+  }
+  .gallery-card figcaption > div,
+  .gallery-card.is-active figcaption > div { font-size: 10px; color: rgba(255,255,255,.55); }
   .gallery-card figcaption h3,
   .gallery-card:not(.is-active) figcaption h3,
-  .gallery-card.is-active figcaption h3 { margin-top: 8px; font-size: 15px; }
-  .gallery-navigation { display: flex; width: max-content; margin: -24px auto 0; gap: 10px; }
-  .gallery-arrow { width: 46px; height: 46px; }
+  .gallery-card.is-active figcaption h3 {
+    margin: 8px 0 0;
+    max-width: none;
+    font-size: 17px;
+    line-height: 1.35;
+  }
+  .gallery-card figcaption p,
+  .gallery-card:not(.is-active) figcaption p,
+  .gallery-card.is-active figcaption p {
+    display: block;
+    margin: 6px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.6);
+  }
+
+  .gallery-navigation { display: flex; width: max-content; margin: 2px auto 0; gap: 12px; }
+  .gallery-arrow { width: 44px; height: 44px; }
 }
 
 @media (min-width: 1025px) and (max-height: 820px) {
