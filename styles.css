@@ -3468,17 +3468,72 @@ button { font: inherit; }
 
 /* Give the vivo project copy a more readable portfolio-scale type size. */
 #vivo .exp-detail-grid strong {
-  font-size: clamp(14px, .92vw, 16px);
+  font-size: clamp(13.5px, .88vw, 15px);
+  margin-bottom: 5px;
+}
+
+#vivo .exp-detail-grid {
+  gap: 12px 26px;
+}
+
+#vivo .exp-detail-grid ul {
+  gap: 3px;
 }
 
 #vivo .exp-detail-grid li {
-  font-size: clamp(13px, .9vw, 15px);
-  line-height: 1.55;
+  font-size: clamp(12.5px, .85vw, 14px);
+  line-height: 1.5;
+}
+
+#vivo .exp-project {
+  margin: 8px 0 12px;
+  padding: 8px 0;
+}
+
+/* Keep "核心项目：企业级 Data Agent 建设" on one line; wrap only at the <br>. */
+#vivo .exp-project--sentence {
+  display: block;
+}
+
+#vivo .exp-project--sentence h3 {
+  display: inline;
+}
+
+#vivo .exp-project h3 {
+  margin: 0;
+  font-size: clamp(19px, 1.55vw, 28px);
+  line-height: 1.28;
+}
+
+#vivo .exp-brand {
+  margin-top: 8px;
+}
+
+#vivo .exp-foot {
+  margin-top: 14px;
 }
 
 @media (max-width: 1024px) {
-  #vivo .exp-detail-grid strong { font-size: 14px; }
-  #vivo .exp-detail-grid li { font-size: 13px; }
+  #vivo .exp-detail-grid strong { font-size: 13.5px; }
+  #vivo .exp-detail-grid li { font-size: 12.5px; }
+}
+
+/* vivo card: two independent columns so blocks stack without row-gap whitespace. */
+#vivo .exp-detail-grid--columns .exp-detail-col {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding-left: 0;
+  border-left: 0;
+}
+
+#vivo .exp-detail-grid--columns .exp-detail-col > div {
+  padding-left: 16px;
+  border-left: 2px solid #dfe6ff;
+}
+
+@media (max-width: 1024px) {
+  #vivo .exp-detail-grid--columns .exp-detail-col > div { padding-left: 13px; }
 }
 
 /* Research archive v4 — minimal project index with a cursor-follow preview. */
